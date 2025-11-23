@@ -1,1 +1,0 @@
-{ "name": "hugo-static-site", "version": "1.0.0", "description": "Static assets for Hugo deployment via Cloudflare Worker", "main": "index.js", "scripts": { "build": "hugo --gc", "deploy": "./deploy.sh" }, "keywords": [], "author": "", "license": "ISC" } ```
