@@ -8,29 +8,29 @@ enableRobotsTXT = true
 canonifyURLs = true
 summaryLength = 25
 
-# --- Ananke Theme Configuration ---
+# SITEMAP CONFIGURATION (Must be a top-level table)
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# --- UNIFIED PARAMETERS BLOCK (MUST ONLY APPEAR ONCE) ---
 [params]
-  # A description for your site
+  # SEO Description
   description = "Your guide to incredible travel experiences without breaking the bank. Hacks, tips, and budget itineraries for savvy travelers."
   
-  # Color palette (Ananke uses a palette)
-  # Default is 'white', other options: 'navy', 'blue', 'green', 'tachyons'
-  # We will stick to the default minimal look for now.
+  # SEO Robot Indexing (New addition)
+  defaultRobots = "index, follow"
+
+  # Ananke Theme Configuration
   body_classes = "bg-white" 
-
-  # Set the site's default background image for headers (optional)
   bg_img = "/images/travel-header-bg.png" 
-
-  # The section to display on the homepage (usually 'posts' or 'blog')
   latestPostCount = 5
-
-  # Display the site logo in the header
   show_reading_time = true
-  
-  # Customize the footer text (optional)
   footer_text = "© 2025 Cheap Holiday Hacks. All rights reserved."
 
-# --- Menu Definitions (Ananke Format) ---
+
+# --- MENU DEFINITIONS ---
 
 [[menu.main]]
   name = "Home"
@@ -47,14 +47,7 @@ summaryLength = 25
   url = "/posts/"
   weight = 30
 
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      # This allows raw HTML in your Markdown files (like <figure>, <ins>, <script>)
-      unsafe = true
-
-# --- NEW FOOTER MENU FOR LEGAL & CONTACT LINKS ---
+# --- FOOTER MENU ---
 [[menu.footer]]
   name = "Privacy Policy"
   url = "/privacy-policy/"
@@ -70,13 +63,9 @@ summaryLength = 25
   url = "/contact-us/"
   weight = 30
 
-[sitemap]
-  changefreq = "daily"
-  priority = 0.5
-  filename = "sitemap.xml"
-
-# General Indexing Configuration
-[params]
-  description = "Your guide to incredible travel experiences without breaking the bank. Hacks, tips, and budget itineraries for savvy travelers."
-  # This setting tells search engines to index everything by default.
-  defaultRobots = "index, follow"
+# --- MARKUP SETTINGS ---
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # This allows raw HTML (like scripts and AdSense tags) in your Markdown files
+      unsafe = true
