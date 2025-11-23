@@ -1,0 +1,7 @@
+[build]
+      publish = "public"
+      command = "hugo --gc --minify"
+    
+    [context.production.environment]
+      # Setting the minimum required Hugo version for Ananke theme (0.128.0)
+      HUGO_VERSION = "0.128.0"
