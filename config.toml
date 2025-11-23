@@ -70,3 +70,13 @@ summaryLength = 25
   url = "/contact-us/"
   weight = 30
 
+[sitemap]
+  changefreq = "daily"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+# General Indexing Configuration
+[params]
+  description = "Your guide to incredible travel experiences without breaking the bank. Hacks, tips, and budget itineraries for savvy travelers."
+  # This setting tells search engines to index everything by default.
+  defaultRobots = "index, follow"

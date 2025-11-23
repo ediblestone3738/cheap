@@ -1,7 +1,15 @@
 [build]
-      publish = "public"
-      command = "hugo --gc --minify"
-    
-    [context.production.environment]
-      # Setting the minimum required Hugo version for Ananke theme (0.128.0)
-      HUGO_VERSION = "0.128.0"
+  publish = "public"
+  command = "hugo --gc --minify"
+
+[context.production.environment]
+  # Setting the minimum required Hugo version for Ananke theme
+  HUGO_VERSION = "0.128.0"
+
+# --- GLOBAL 404 CATCHALL REDIRECT ---
+[[redirects]]
+  # This catches any URL that doesn't resolve to an existing file
+  from = "/*"
+  # And permanently redirects it to the homepage for SEO benefits
+  to = "/"
+  status = 301
