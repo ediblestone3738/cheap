@@ -1,0 +1,48 @@
+baseURL = "http://localhost:1313/"
+languageCode = "en-us"
+title = "Cheap Holiday Hacks"
+theme = "hello-friend"
+defaultContentLanguage = "en"
+
+[params]
+  dateformat = "2006-01-02"
+  defaultTheme = "dark" 
+  description = "A simple site for my project."
+
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+ignoreLogs = ["warning-goldmark-raw-html"]
+# --- Menu Definitions ---
+
+[[menu.main]]
+  identifier = "home"
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "privacy"
+  name = "Privacy Policy"
+  url = "/privacy-policy/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact-us/"
+  weight = 30
+
+[[menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
+  weight = 40

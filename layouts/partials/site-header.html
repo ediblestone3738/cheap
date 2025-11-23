@@ -1,0 +1,62 @@
+<style>
+/* --- FORCING DROPDOWN VISIBILITY ON HOVER --- */
+/* Target the submenu (ul) that is hidden by default */
+.site-navigation li ul {
+    display: none;
+    position: absolute;
+    top: 100%; /* Position below the parent */
+    left: 0;
+    z-index: 1000;
+    min-width: 150px;
+    background-color: #383838; /* Dark gray background for submenu */
+    border: 1px solid #444;
+    padding: 0;
+    list-style: none; /* Ensure no bullet points */
+}
+
+/* Make the submenu visible when the parent li is hovered */
+.site-navigation li:hover > ul {
+    display: block;
+}
+
+/* Style the submenu links */
+.site-navigation li ul li {
+    float: none; /* Stack submenu items vertically */
+    border-bottom: 1px solid #444;
+}
+
+.site-navigation li ul li a {
+    padding: 10px 15px;
+    display: block;
+    white-space: nowrap;
+    color: #fff !important; /* Ensure text is white */
+}
+
+/* Add spacing between top-level items */
+.site-navigation li {
+    padding-right: 15px; 
+}
+</style>
+
+<header class="cover bg-top bg-dark-gray">
+    {{/* Inner div ensures the menu and text are WHITE on the dark background */}}
+    <div class="white-90">
+        {{ partial "site-navigation.html" . }}
+        {{/* Reduced vertical padding (pv3 pv4-l) for smaller header height */}}
+        <div class="tc-l pv3 pv4-l ph3 ph4-ns">
+            <h1 class="f2 f-headline-l fw1 mb4 mt0 lh-title">
+                {{ with .Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}
+            </h1>
+            <h2 class="f6 fw1 ttu tracked">
+                {{ with .Date }}
+                    <time datetime="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
+                        {{ .Format "Jan 2, 2006" }}
+                    </time>
+                {{ end }}
+            </h2>
+        </div>
+    </div>
+</header>
+
+{{/* --- INSERT ADSENSE BANNER HERE (Under Header/Banner) --- */}}
+{{ partial "adsense-banner.html" . }}

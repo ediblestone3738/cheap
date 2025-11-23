@@ -1,17 +1,72 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://beta.cheapholidayhacks.com"
 languageCode = "en-us"
-title = "My Massive 3000-Page Hugo Site"
-theme = "hello-friend"
-defaultContentLanguage = "en"
+title = "Cheap Holiday Hacks"
+theme = "ananke"
 
+# Hugo default settings
+enableRobotsTXT = true
+canonifyURLs = true
+summaryLength = 25
+
+# --- Ananke Theme Configuration ---
 [params]
-  dateformat = "2006-01-02"
-  defaultTheme = "dark" 
-  description = "A simple site for my project."
+  # A description for your site
+  description = "Your guide to incredible travel experiences without breaking the bank. Hacks, tips, and budget itineraries for savvy travelers."
+  
+  # Color palette (Ananke uses a palette)
+  # Default is 'white', other options: 'navy', 'blue', 'green', 'tachyons'
+  # We will stick to the default minimal look for now.
+  body_classes = "bg-white" 
 
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    name = "Posts"
-    url = "/posts/"
-    weight = 1
+  # Set the site's default background image for headers (optional)
+  bg_img = "/images/travel-header-bg.png" 
+
+  # The section to display on the homepage (usually 'posts' or 'blog')
+  latestPostCount = 5
+
+  # Display the site logo in the header
+  show_reading_time = true
+  
+  # Customize the footer text (optional)
+  footer_text = "© 2025 Cheap Holiday Hacks. All rights reserved."
+
+# --- Menu Definitions (Ananke Format) ---
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  weight = 20
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 30
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # This allows raw HTML in your Markdown files (like <figure>, <ins>, <script>)
+      unsafe = true
+
+# --- NEW FOOTER MENU FOR LEGAL & CONTACT LINKS ---
+[[menu.footer]]
+  name = "Privacy Policy"
+  url = "/privacy-policy/"
+  weight = 10
+
+[[menu.footer]]
+  name = "Terms of Use"
+  url = "/terms-of-use/"
+  weight = 20
+
+[[menu.footer]]
+  name = "Contact Us"
+  url = "/contact-us/"
+  weight = 30
+

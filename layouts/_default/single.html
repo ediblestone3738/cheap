@@ -1,0 +1,65 @@
+{{ define "header" }}
+    {{ partial "site-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+    <main class="ph4 pv6">
+        {{/* New Responsive Grid Layout for Content + Sidebar Ad */}}
+        <div class="flex flex-column flex-row-l mw8 center">
+            
+            {{/* LEFT COLUMN: Post Content (2/3 width on large screens) */}}
+            <div class="w-100 w-70-l pr4-l mb4 mb0-l">
+                <article class="post-content">
+                    <header>
+                        <h1 class="f1 athelas mb1 tc">{{ .Title }}</h1>
+                        <p class="f6 gray mb0 tr">
+                            <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                                {{ .Date.Format "Jan 2, 2006" }}
+                            </time>
+                        </p>
+                    </header>
+                    
+                    <section class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray">
+                        {{ .Content }}
+                    </section>
+                </article>
+
+                {{/* --- ADSENSE BLOCK BELOW POST CONTENT (In-Post Ad) --- */}}
+                <div class="ad-block mv4 pv3 tc">
+                    <p class="f6 gray mb2">Sponsored Content (In-Post)</p>
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2215390236080018"
+                         data-ad-slot="9876543210" 
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+                {{/* --- END ADSENSE BLOCK --- */}}
+            </div>
+
+            {{/* RIGHT COLUMN: Sidebar Ad (1/3 width on large screens) */}}
+            <div class="w-100 w-30-l pl4-l">
+                <aside class="sidebar-ad pt4">
+                    <p class="f6 gray mb2 tc">Sponsored Content (Sidebar)</p>
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2215390236080018"
+                         data-ad-slot="6185790501" 
+                         data-ad-format="auto"
+                         data-full-width-responsive="false"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </aside>
+            </div>
+        </div>
+    </main>
+{{ end }}
+
+{{ define "footer" }}
+    {{ partial "site-footer.html" . }}
+    {{ partial "adsense-footer.html" . }} 
+{{ end }}

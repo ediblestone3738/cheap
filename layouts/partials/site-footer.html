@@ -1,0 +1,19 @@
+<footer class="bg-dark-gray bottom-0 w-100 pa3" role="contentinfo">
+    <div class="flex justify-center white-70 f6">
+        
+        {{/* Legal and Contact Links (Footer Menu) */}}
+        <nav class="flex">
+            {{ range .Site.Menus.footer }}
+                <a class="link dim white-70 ph2" href="{{ .URL | absURL }}" title="{{ .Name }}">
+                    {{ .Name }}
+                </a>
+                <span class="white-70">|</span>
+            {{ end }}
+        </nav>
+        
+        {{/* Site Copyright and Attribution */}}
+        <span class="pl3">
+            &copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.
+        </span>
+    </div>
+</footer>
