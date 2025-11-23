@@ -1,1 +1,1 @@
-{ "name": "hugo-static-site", "version": "1.0.0", "description": "Static assets for Hugo deployment via Cloudflare Worker", "main": "index.js", "scripts": { "build": "hugo --gc", "deploy": "npx wrangler deploy --minify --asset-json-path=./dist/assets.json" }, "keywords": [], "author": "", "license": "ISC" } ```
+{ "name": "hugo-static-site", "version": "1.0.0", "description": "Static assets for Hugo deployment via Cloudflare Worker", "main": "index.js", "scripts": { "build": "hugo --gc", "deploy": "./deploy.sh" }, "keywords": [], "author": "", "license": "ISC" } ```

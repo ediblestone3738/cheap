@@ -2,20 +2,16 @@ baseURL = "http://localhost:1313/"
 languageCode = "en-us"
 title = "My Massive 3000-Page Hugo Site"
 theme = "hello-friend"
+defaultContentLanguage = "en"
 
-# Theme-specific parameters for Hello Friend
 [params]
   dateformat = "2006-01-02"
-  defaultTheme = "dark" # Start in dark mode
+  defaultTheme = "dark" 
   description = "A simple site for my project."
-  
+
 [menu]
   [[menu.main]]
     identifier = "posts"
     name = "Posts"
     url = "/posts/"
     weight = 1
-
-[taxonomies]
-  category = "categories"
-  tag = "tags"
